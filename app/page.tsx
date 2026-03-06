@@ -50,9 +50,9 @@ const GlobalStyle = () => (
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: #070707; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+    body { background: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
     ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-track { background: #070707; }
+    ::-webkit-scrollbar-track { background: #ffffff; }
     ::-webkit-scrollbar-thumb { background: linear-gradient(#FFB800,#FF5F00); border-radius: 4px; }
     ::selection { background: rgba(255,184,0,0.25); }
     img { display: block; max-width: 100%; }
@@ -79,9 +79,9 @@ function Nav() {
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
       padding: "0 clamp(1rem, 4vw, 3rem)",
-      background: scrolled ? "rgba(7,7,7,0.94)" : "transparent",
+      background: scrolled ? "rgba(255,255,255,0.96)" : "transparent",
       backdropFilter: scrolled ? "blur(20px)" : "none",
-      borderBottom: scrolled ? "1px solid rgba(255,184,0,0.1)" : "none",
+      borderBottom: scrolled ? "1px solid rgba(255,184,0,0.2)" : "none",
       transition: "all 0.4s ease",
       display: "flex", alignItems: "center", justifyContent: "space-between",
       height: 72,
@@ -99,19 +99,19 @@ function Nav() {
             <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
           </svg>
         </div>
-        <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff", letterSpacing: "-.01em" }}>PROSOLAR</span>
+        <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#111111", letterSpacing: "-.01em" }}>PROSOLAR</span>
       </div>
 
       {/* Desktop links */}
       <div style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
         {["Services", "Projects", "About", "FAQ"].map(l => (
           <a key={l} href={`#${l.toLowerCase()}`} style={{
-            color: "rgba(255,255,255,0.6)", textDecoration: "none",
+            color: "rgba(15,15,15,0.6)", textDecoration: "none",
             fontSize: ".85rem", letterSpacing: ".05em", fontFamily: "'Plus Jakarta Sans',sans-serif",
             transition: "color .2s",
           }}
             onMouseEnter={e => (e.currentTarget.style.color = "#FFB800")}
-            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.6)")}>{l}</a>
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(20,20,20,0.6)")}>{l}</a>
         ))}
         <CTABtn label="Free Quote" size="sm" />
       </div>
@@ -165,7 +165,7 @@ function Label({ children, color = "#FFB800" }: { children: ReactNode; color?: s
 
 function Heading({ children, style = {} }: { children: ReactNode; style?: React.CSSProperties }) {
   return (
-    <h2 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "clamp(2rem,4vw,3.2rem)", color: "#fff", letterSpacing: "-.035em", lineHeight: 1.05, ...style }}>
+    <h2 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "clamp(2rem,4vw,3.2rem)", color: "#111111", letterSpacing: "-.035em", lineHeight: 1.05, ...style }}>
       {children}
     </h2>
   );
@@ -189,9 +189,9 @@ function Hero() {
         filter: "brightness(0.28)",
       }} />
       {/* Gradient overlay */}
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(7,7,7,0.97) 40%, rgba(7,7,7,0.4) 100%)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(255,255,255,0.92) 40%, rgba(255,255,255,0.25) 100%)" }} />
       {/* Grid */}
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,184,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,184,0,0.04) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,184,0,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,184,0,0.08) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
       {/* Glow */}
       <div style={{ position: "absolute", top: "10%", left: "5%", width: 500, height: 500, background: "radial-gradient(circle,rgba(255,184,0,0.12),transparent 65%)", filter: "blur(40px)", pointerEvents: "none" }} />
 
@@ -214,7 +214,7 @@ function Hero() {
           <Reveal delay={0.05}>
             <h1 style={{
               fontFamily: "'Syne',sans-serif", fontWeight: 900,
-              fontSize: "clamp(3.2rem,7.5vw,7rem)", color: "#fff",
+              fontSize: "clamp(3.2rem,7.5vw,7rem)", color: "#111111",
               letterSpacing: "-.04em", lineHeight: .98, marginBottom: "1.5rem",
             }}>
               Stop Paying<br />
@@ -227,7 +227,7 @@ function Hero() {
 
           {/* SUB HEADING */}
           <Reveal delay={0.1}>
-            <p style={{ fontSize: "clamp(1rem,2vw,1.25rem)", color: "rgba(255,255,255,0.6)", lineHeight: 1.75, maxWidth: 580, marginBottom: "2.5rem", fontWeight: 400 }}>
+            <p style={{ fontSize: "clamp(1rem,2vw,1.25rem)", color: "rgba(15,15,15,0.6)", lineHeight: 1.75, maxWidth: 580, marginBottom: "2.5rem", fontWeight: 400 }}>
               ProSolar Energy designs, supplies & installs premium solar systems that eliminate electricity bills, survive Nigeria's harshest conditions, and run reliably for 25+ years — guaranteed.
             </p>
           </Reveal>
@@ -237,9 +237,9 @@ function Hero() {
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "3.5rem" }}>
               <CTABtn label="Get My Free Solar Quote" size="lg" />
               <a href="#how" style={{
-                display: "inline-flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.65)",
+                display: "inline-flex", alignItems: "center", gap: 8, color: "rgba(15,15,15,0.65)",
                 fontSize: ".95rem", textDecoration: "none", padding: "18px 28px",
-                border: "1px solid rgba(255,255,255,0.14)", borderRadius: 100, transition: "border-color .2s",
+                border: "1px solid rgba(0,0,0,0.15)", borderRadius: 100, transition: "border-color .2s",
               }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(255,184,0,0.5)")}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)")}>
@@ -251,7 +251,7 @@ function Hero() {
 
           {/* SOCIAL PROOF NUMBERS */}
           <Reveal delay={0.2}>
-            <div style={{ display: "flex", gap: "clamp(1.5rem,4vw,3rem)", flexWrap: "wrap", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+            <div style={{ display: "flex", gap: "clamp(1.5rem,4vw,3rem)", flexWrap: "wrap", paddingTop: "2rem", borderTop: "1px solid rgba(0,0,0,0.09)" }}>
               {[
                 { val: `${count}+`, label: "Happy Clients" },
                 { val: "25yr", label: "Warranty" },
@@ -260,7 +260,7 @@ function Hero() {
               ].map(s => (
                 <div key={s.label}>
                   <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "clamp(1.5rem,3vw,2rem)", color: "#FFB800" }}>{s.val}</div>
-                  <div style={{ fontSize: ".78rem", color: "rgba(255,255,255,0.38)", letterSpacing: ".08em", marginTop: 3 }}>{s.label}</div>
+                  <div style={{ fontSize: ".78rem", color: "rgba(15,15,15,0.38)", letterSpacing: ".08em", marginTop: 3 }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -277,12 +277,12 @@ function Hero() {
             animation: "float 5s ease-in-out infinite",
           }}>
             <img src={IMAGES.panels1} alt="Solar installation" style={{ width: "100%", height: 260, objectFit: "cover" }} />
-            <div style={{ background: "rgba(10,10,10,0.95)", backdropFilter: "blur(10px)", padding: "1.25rem 1.5rem", borderTop: "1px solid rgba(255,184,0,0.1)" }}>
+            <div style={{ background: "rgba(255,255,255,0.97)", backdropFilter: "blur(10px)", padding: "1.25rem 1.5rem", borderTop: "1px solid rgba(255,184,0,0.2)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#00E676", boxShadow: "0 0 8px #00E676", animation: "shimmer 2s ease-in-out infinite" }} />
-                <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".9rem" }}>System Active</span>
+                <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".9rem" }}>System Active</span>
               </div>
-              <div style={{ marginTop: 8, fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: ".78rem", color: "rgba(255,255,255,0.45)" }}>Generating 8.4 kW · Saving ₦0 on bills</div>
+              <div style={{ marginTop: 8, fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: ".78rem", color: "rgba(15,15,15,0.45)" }}>Generating 8.4 kW · Saving ₦0 on bills</div>
             </div>
           </div>
         </Reveal>
@@ -296,11 +296,11 @@ function Ticker() {
   const items = ["Bayelsa State Govt", "100kWp Otuan Plant", "LATC Aguobiri", "Korokorosei 100kWp", "Dobi Gwagwalada 95kWp", "500+ Happy Clients", "10+ Years Experience", "25-Year Warranty", "Lagos • Abuja • Bayelsa"];
   const doubled = [...items, ...items];
   return (
-    <div style={{ background: "#0d0d0d", borderTop: "1px solid rgba(255,255,255,0.05)", borderBottom: "1px solid rgba(255,255,255,0.05)", padding: "18px 0", overflow: "hidden", position: "relative" }}>
+    <div style={{ background: "#f0f0f0", borderTop: "1px solid rgba(0,0,0,0.07)", borderBottom: "1px solid rgba(0,0,0,0.07)", padding: "18px 0", overflow: "hidden", position: "relative" }}>
       <div style={{ display: "flex", gap: "3rem", animation: "ticker 28s linear infinite", width: "max-content" }}>
         {doubled.map((item, i) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: "3rem", flexShrink: 0 }}>
-            <span style={{ fontFamily: "'Syne',sans-serif", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(255,255,255,0.28)", whiteSpace: "nowrap" }}>{item}</span>
+            <span style={{ fontFamily: "'Syne',sans-serif", fontSize: ".78rem", letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(15,15,15,0.28)", whiteSpace: "nowrap" }}>{item}</span>
             <span style={{ color: "#FFB800", fontSize: ".6rem" }}>◆</span>
           </div>
         ))}
@@ -313,7 +313,7 @@ function Ticker() {
 function VSL() {
   const [playing, setPlaying] = useState(false);
   return (
-    <Section bg="#070707">
+    <Section bg="#ffffff">
       <Reveal>
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <Label>Watch First — 2 Minutes</Label>
@@ -347,12 +347,12 @@ function VSL() {
                 <svg viewBox="0 0 24 24" fill="#000" style={{ width: 34, height: 34, marginLeft: 4 }}><polygon points="5 3 19 12 5 21 5 3" /></svg>
               </div>
             </div>
-            <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", color: "rgba(255,255,255,0.55)", fontSize: ".9rem", letterSpacing: ".06em" }}>
+            <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", color: "rgba(15,15,15,0.55)", fontSize: ".9rem", letterSpacing: ".06em" }}>
               How ProSolar transformed 500+ Nigerian homes & businesses
             </p>
           </div>
           {/* Corner tags */}
-          <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(0,0,0,0.7)", backdropFilter: "blur(8px)", borderRadius: 100, padding: "6px 14px", border: "1px solid rgba(255,184,0,0.2)", fontSize: ".75rem", color: "#FFB800", fontWeight: 600, letterSpacing: ".08em" }}>🔴 REAL CLIENT STORIES</div>
+          <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(255,255,255,0.85)", backdropFilter: "blur(8px)", borderRadius: 100, padding: "6px 14px", border: "1px solid rgba(255,184,0,0.2)", fontSize: ".75rem", color: "#FFB800", fontWeight: 600, letterSpacing: ".08em" }}>🔴 REAL CLIENT STORIES</div>
         </div>
       </Reveal>
     </Section>
@@ -367,7 +367,7 @@ function Problem() {
     { emoji: "🌫️", title: "Your Generator is a Health Risk", body: "Carbon monoxide poisoning kills silently. Constant noise destroys concentration. Your children are breathing fumes. The true cost of gen-life goes way beyond money." },
   ];
   return (
-    <Section id="problem" bg="linear-gradient(180deg,#070707 0%,#0c0800 100%)">
+    <Section id="problem" bg="linear-gradient(180deg,#ffffff 0%,#fffbf0 100%)">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,6vw,5rem)", alignItems: "center", marginBottom: "clamp(3rem,6vw,5rem)" }}>
         <div>
           <Reveal>
@@ -375,7 +375,7 @@ function Problem() {
             <Heading>You're Trapped in a<br />
               <span style={{ color: "#FF5F00" }}>Broken Energy System</span>
             </Heading>
-            <p style={{ marginTop: "1.5rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8, fontSize: ".95rem" }}>
+            <p style={{ marginTop: "1.5rem", color: "rgba(15,15,15,0.5)", lineHeight: 1.8, fontSize: ".95rem" }}>
               Every day you run a generator you're renting power you'll never own. Let's call it what it is. And it's not just inconvenience — it's a financial and health emergency hiding in plain sight.
             </p>
           </Reveal>
@@ -385,7 +385,7 @@ function Problem() {
             <img src={IMAGES.roof} alt="Old rooftop" style={{ width: "100%", height: 320, objectFit: "cover", filter: "brightness(0.65) saturate(0.5)" }} />
             <div style={{ background: "rgba(255,95,0,0.08)", padding: "1.5rem", borderTop: "1px solid rgba(255,95,0,0.15)" }}>
               <p style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#FF5F00", fontSize: "1rem" }}>₦2.4M+ wasted annually</p>
-              <p style={{ fontSize: ".82rem", color: "rgba(255,255,255,0.4)", marginTop: 4 }}>on fuel for the average Nigerian home running a generator</p>
+              <p style={{ fontSize: ".82rem", color: "rgba(15,15,15,0.4)", marginTop: 4 }}>on fuel for the average Nigerian home running a generator</p>
             </div>
           </div>
         </Reveal>
@@ -401,8 +401,8 @@ function Problem() {
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,95,0,0.1)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,95,0,0.35)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,95,0,0.05)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,95,0,0.15)"; }}>
               <div style={{ fontSize: "2.4rem", marginBottom: "1.25rem" }}>{p.emoji}</div>
-              <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: "1.05rem", marginBottom: ".75rem" }}>{p.title}</h3>
-              <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.75, fontSize: ".9rem" }}>{p.body}</p>
+              <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: "1.05rem", marginBottom: ".75rem" }}>{p.title}</h3>
+              <p style={{ color: "rgba(15,15,15,0.5)", lineHeight: 1.75, fontSize: ".9rem" }}>{p.body}</p>
             </div>
           </Reveal>
         ))}
@@ -425,7 +425,7 @@ function Solution() {
     { icon: "⚡", title: "Instant, Uninterrupted Power", body: "Inverters switch in milliseconds. Your devices, your business — never interrupted again." },
   ];
   return (
-    <Section id="services" bg="#070707">
+    <Section id="services" bg="#ffffff">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,6vw,5rem)", alignItems: "center" }}>
         {/* Images collage */}
         <Reveal from="left" delay={0.05}>
@@ -443,12 +443,12 @@ function Solution() {
             {/* Stats badge */}
             <div style={{
               position: "absolute", bottom: "28%", left: "-10%",
-              background: "rgba(10,10,10,0.92)", backdropFilter: "blur(12px)",
+              background: "rgba(255,255,255,0.95)", backdropFilter: "blur(12px)",
               border: "1px solid rgba(255,184,0,0.2)", borderRadius: 16, padding: "1rem 1.25rem",
               boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
             }}>
               <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "1.6rem", color: "#FFB800" }}>100%</div>
-              <div style={{ fontSize: ".75rem", color: "rgba(255,255,255,0.45)", marginTop: 2 }}>Bill elimination<br />for our clients</div>
+              <div style={{ fontSize: ".75rem", color: "rgba(15,15,15,0.45)", marginTop: 2 }}>Bill elimination<br />for our clients</div>
             </div>
           </div>
         </Reveal>
@@ -462,7 +462,7 @@ function Solution() {
                 Installed in Days
               </span>
             </Heading>
-            <p style={{ marginTop: "1.5rem", marginBottom: "2.5rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.8, fontSize: ".95rem" }}>
+            <p style={{ marginTop: "1.5rem", marginBottom: "2.5rem", color: "rgba(15,15,15,0.55)", lineHeight: 1.8, fontSize: ".95rem" }}>
               ProSolar designs, supplies, and installs premium solar systems tailored to your exact energy profile — homes, businesses, and rural communities across Nigeria.
             </p>
           </Reveal>
@@ -472,8 +472,8 @@ function Solution() {
                 <div style={{ display: "flex", gap: "1.25rem", alignItems: "flex-start" }}>
                   <div style={{ width: 52, height: 52, borderRadius: 14, background: "rgba(255,184,0,0.08)", border: "1px solid rgba(255,184,0,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.5rem", flexShrink: 0 }}>{b.icon}</div>
                   <div>
-                    <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".95rem", marginBottom: ".4rem" }}>{b.title}</h3>
-                    <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: ".88rem" }}>{b.body}</p>
+                    <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".95rem", marginBottom: ".4rem" }}>{b.title}</h3>
+                    <p style={{ color: "rgba(15,15,15,0.5)", lineHeight: 1.7, fontSize: ".88rem" }}>{b.body}</p>
                   </div>
                 </div>
               </Reveal>
@@ -499,15 +499,15 @@ function Solution() {
           ].map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08}>
               <div style={{
-                borderRadius: 18, overflow: "hidden", background: "#0d0d0d",
-                border: "1px solid rgba(255,255,255,0.07)", transition: "all .3s", cursor: "pointer",
+                borderRadius: 18, overflow: "hidden", background: "#ffffff",
+                border: "1px solid rgba(0,0,0,0.08)", transition: "all .3s", cursor: "pointer",
               }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,184,0,0.3)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}>
                 <img src={s.img} alt={s.title} style={{ width: "100%", height: 180, objectFit: "cover", filter: "brightness(0.75)" }} />
                 <div style={{ padding: "1.25rem" }}>
-                  <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".95rem", marginBottom: ".5rem" }}>{s.title}</h3>
-                  <p style={{ fontSize: ".82rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.65 }}>{s.desc}</p>
+                  <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".95rem", marginBottom: ".5rem" }}>{s.title}</h3>
+                  <p style={{ fontSize: ".82rem", color: "rgba(15,15,15,0.45)", lineHeight: 1.65 }}>{s.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -527,7 +527,7 @@ function Testimonials() {
     { name: "Tom Wilson", loc: "Bayelsa", stars: 5, text: "Our business runs 24/7 now without a single interruption. ProSolar paid for itself in under a year through fuel savings alone." },
   ];
   return (
-    <Section bg="linear-gradient(180deg,#0c0800 0%,#070707 100%)">
+    <Section bg="linear-gradient(180deg,#fffbf0 0%,#ffffff 100%)">
       <Reveal>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <Label>Real People, Real Results</Label>
@@ -538,19 +538,19 @@ function Testimonials() {
         {reviews.map((r, i) => (
           <Reveal key={r.name} delay={i * 0.08}>
             <div style={{
-              background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)",
+              background: "rgba(0,0,0,0.03)", border: "1px solid rgba(0,0,0,0.08)",
               borderRadius: 18, padding: "2rem", transition: "all .3s", height: "100%",
             }}
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,184,0,0.2)"; (e.currentTarget as HTMLDivElement).style.background = "rgba(255,184,0,0.04)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.03)"; }}>
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)"; (e.currentTarget as HTMLDivElement).style.background = "rgba(0,0,0,0.03)"; }}>
               <div style={{ display: "flex", gap: 3, marginBottom: "1rem" }}>
                 {[...Array(r.stars)].map((_, j) => <span key={j} style={{ color: "#FFB800", fontSize: ".9rem" }}>★</span>)}
               </div>
-              <p style={{ color: "rgba(255,255,255,0.68)", lineHeight: 1.75, fontSize: ".9rem", marginBottom: "1.5rem" }}>"{r.text}"</p>
+              <p style={{ color: "rgba(15,15,15,0.68)", lineHeight: 1.75, fontSize: ".9rem", marginBottom: "1.5rem" }}>"{r.text}"</p>
               <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
                 <div style={{ width: 40, height: 40, borderRadius: "50%", background: "linear-gradient(135deg,#FFB800,#FF5F00)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Syne',sans-serif", fontWeight: 800, fontSize: ".9rem", color: "#000" }}>{r.name[0]}</div>
                 <div>
-                  <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".9rem" }}>{r.name}</div>
+                  <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".9rem" }}>{r.name}</div>
                   <div style={{ fontSize: ".75rem", color: "#FFB800" }}>{r.loc}, Nigeria</div>
                 </div>
               </div>
@@ -582,7 +582,7 @@ function Roadmap() {
     "Annual Maintenance Visit", "24/7 Customer Support Line",
   ];
   return (
-    <Section id="how" bg="#070707">
+    <Section id="how" bg="#ffffff">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,6vw,5rem)" }}>
         {/* Roadmap */}
         <div>
@@ -604,8 +604,8 @@ function Roadmap() {
                       boxShadow: "0 0 20px rgba(255,184,0,0.3)",
                     }}>{s.num}</div>
                     <div style={{ paddingTop: 10 }}>
-                      <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".95rem", marginBottom: ".45rem" }}>{s.title}</h3>
-                      <p style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.7, fontSize: ".88rem" }}>{s.body}</p>
+                      <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".95rem", marginBottom: ".45rem" }}>{s.title}</h3>
+                      <p style={{ color: "rgba(15,15,15,0.45)", lineHeight: 1.7, fontSize: ".88rem" }}>{s.body}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -625,7 +625,7 @@ function Roadmap() {
               <Reveal key={item} delay={i * 0.07}>
                 <div style={{
                   display: "flex", gap: "1rem", alignItems: "center",
-                  background: "rgba(255,184,0,0.04)", border: "1px solid rgba(255,184,0,0.1)",
+                  background: "rgba(255,184,0,0.04)", border: "1px solid rgba(255,184,0,0.2)",
                   borderRadius: 12, padding: "1rem 1.25rem", transition: "all .25s",
                 }}
                   onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = "rgba(255,184,0,0.08)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,184,0,0.25)"; }}
@@ -633,7 +633,7 @@ function Roadmap() {
                   <div style={{ width: 22, height: 22, borderRadius: "50%", background: "linear-gradient(135deg,#FFB800,#FF5F00)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="3" style={{ width: 12, height: 12 }}><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
-                  <span style={{ fontSize: ".9rem", color: "rgba(255,255,255,0.78)" }}>{item}</span>
+                  <span style={{ fontSize: ".9rem", color: "rgba(15,15,15,0.75)" }}>{item}</span>
                 </div>
               </Reveal>
             ))}
@@ -659,7 +659,7 @@ function Projects() {
     { img: IMAGES.installation, title: "95kWp Solar Plant", loc: "Dobi, Gwagwalada, Abuja" },
   ];
   return (
-    <Section id="projects" bg="linear-gradient(180deg,#070707 0%,#0c0800 100%)">
+    <Section id="projects" bg="linear-gradient(180deg,#ffffff 0%,#fffbf0 100%)">
       <Reveal>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <Label>Past Projects</Label>
@@ -671,7 +671,7 @@ function Projects() {
           <Reveal key={p.title + p.loc} delay={i * 0.1}>
             <div style={{
               borderRadius: 20, overflow: "hidden", position: "relative",
-              border: "1px solid rgba(255,255,255,0.07)", transition: "all .3s", cursor: "pointer",
+              border: "1px solid rgba(0,0,0,0.08)", transition: "all .3s", cursor: "pointer",
             }}
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,184,0,0.3)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)"; }}>
@@ -682,8 +682,8 @@ function Projects() {
                 padding: "3rem 1.5rem 1.5rem",
               }}>
                 <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#FFB800", fontSize: ".78rem", letterSpacing: ".1em", marginBottom: 4 }}>COMPLETED PROJECT</div>
-                <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, color: "#fff", fontSize: "1rem" }}>{p.title}</h3>
-                <p style={{ fontSize: ".8rem", color: "rgba(255,255,255,0.5)", marginTop: 3 }}>{p.loc}</p>
+                <h3 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, color: "#111111", fontSize: "1rem" }}>{p.title}</h3>
+                <p style={{ fontSize: ".8rem", color: "rgba(15,15,15,0.5)", marginTop: 3 }}>{p.loc}</p>
               </div>
             </div>
           </Reveal>
@@ -696,7 +696,7 @@ function Projects() {
 // ── 9. ABOUT ──────────────────────────────────────────────────────────────────
 function About() {
   return (
-    <Section id="about" bg="#070707">
+    <Section id="about" bg="#ffffff">
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem,6vw,5rem)", alignItems: "center" }}>
         <div>
           <Reveal>
@@ -706,10 +706,10 @@ function About() {
                 Solar Energy Company
               </span>
             </Heading>
-            <p style={{ marginTop: "1.5rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
+            <p style={{ marginTop: "1.5rem", color: "rgba(15,15,15,0.55)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
               ProSolar Energy was built on one mission: give every Nigerian access to reliable, affordable, clean electricity. We've delivered landmark projects from Abuja to Bayelsa, powering homes, hospitals, schools, and businesses.
             </p>
-            <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
+            <p style={{ color: "rgba(15,15,15,0.55)", lineHeight: 1.8, marginBottom: "2.5rem" }}>
               Our certified engineers bring international standards to local execution — with after-sales support that never ends at installation. We're your long-term energy partner, not just a vendor.
             </p>
           </Reveal>
@@ -718,7 +718,7 @@ function About() {
               <Reveal key={l}>
                 <div style={{ background: "rgba(255,184,0,0.05)", border: "1px solid rgba(255,184,0,0.12)", borderRadius: 14, padding: "1.25rem" }}>
                   <div style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "1.6rem", color: "#FFB800" }}>{v}</div>
-                  <div style={{ fontSize: ".75rem", color: "rgba(255,255,255,0.4)", marginTop: 4, lineHeight: 1.5 }}>{l}</div>
+                  <div style={{ fontSize: ".75rem", color: "rgba(15,15,15,0.4)", marginTop: 4, lineHeight: 1.5 }}>{l}</div>
                 </div>
               </Reveal>
             ))}
@@ -732,15 +732,15 @@ function About() {
             }} />
             <div style={{
               position: "absolute", bottom: -20, left: -20,
-              background: "rgba(10,10,10,0.92)", backdropFilter: "blur(12px)",
+              background: "rgba(255,255,255,0.95)", backdropFilter: "blur(12px)",
               border: "1px solid rgba(255,184,0,0.2)", borderRadius: 16, padding: "1.25rem 1.5rem",
               boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#00E676", boxShadow: "0 0 8px #00E676" }} />
-                <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".85rem" }}>Built for Nigeria</span>
+                <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".85rem" }}>Built for Nigeria</span>
               </div>
-              <p style={{ fontSize: ".75rem", color: "rgba(255,255,255,0.4)", maxWidth: 180, lineHeight: 1.5 }}>Engineered for tropical heat, humidity & harmattan conditions</p>
+              <p style={{ fontSize: ".75rem", color: "rgba(15,15,15,0.4)", maxWidth: 180, lineHeight: 1.5 }}>Engineered for tropical heat, humidity & harmattan conditions</p>
             </div>
           </div>
         </Reveal>
@@ -761,7 +761,7 @@ function FAQ() {
     { q: "Can solar power my AC, fridge, and heavy appliances?", a: "Absolutely. We conduct a thorough energy audit to size your system correctly. Many clients run multiple ACs, refrigerators, and full office equipment 24/7 on ProSolar systems." },
   ];
   return (
-    <Section id="faq" bg="linear-gradient(180deg,#0c0800 0%,#070707 100%)">
+    <Section id="faq" bg="linear-gradient(180deg,#fffbf0 0%,#ffffff 100%)">
       <Reveal>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <Label>FAQ</Label>
@@ -774,17 +774,17 @@ function FAQ() {
             <div
               onClick={() => setOpen(open === i ? null : i)}
               style={{
-                background: open === i ? "rgba(255,184,0,0.06)" : "rgba(255,255,255,0.03)",
+                background: open === i ? "rgba(255,184,0,0.06)" : "rgba(0,0,0,0.03)",
                 border: `1px solid ${open === i ? "rgba(255,184,0,0.25)" : "rgba(255,255,255,0.07)"}`,
                 borderRadius: 14, overflow: "hidden", transition: "all .3s", cursor: "pointer",
               }}>
               <div style={{ padding: "1.4rem 1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".92rem", paddingRight: "1rem" }}>{f.q}</span>
+                <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#111111", fontSize: ".92rem", paddingRight: "1rem" }}>{f.q}</span>
                 <span style={{ color: "#FFB800", fontSize: "1.4rem", flexShrink: 0, transform: open === i ? "rotate(45deg)" : "rotate(0)", transition: "transform .3s", lineHeight: 1 }}>+</span>
               </div>
               {open === i && (
                 <div style={{ padding: "0 1.5rem 1.5rem" }}>
-                  <p style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1.75, fontSize: ".9rem" }}>{f.a}</p>
+                  <p style={{ color: "rgba(15,15,15,0.55)", lineHeight: 1.75, fontSize: ".9rem" }}>{f.a}</p>
                 </div>
               )}
             </div>
@@ -805,26 +805,26 @@ function FinalCTA() {
   return (
     <section id="quote" style={{ position: "relative", overflow: "hidden", padding: "clamp(80px,12vw,160px) clamp(1rem,5vw,3rem)", textAlign: "center" }}>
       <img src={IMAGES.farm} alt="Solar farm" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.15) saturate(0.8)" }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,184,0,0.12) 0%, rgba(7,7,7,0.9) 70%)" }} />
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,184,0,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,184,0,0.04) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,184,0,0.15) 0%, rgba(255,255,255,0.9) 70%)" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,184,0,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,184,0,0.08) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />
 
       <div style={{ position: "relative", zIndex: 1, maxWidth: 720, margin: "0 auto" }}>
         <Reveal>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,184,0,0.1)", border: "1px solid rgba(255,184,0,0.3)", borderRadius: 100, padding: "8px 18px", marginBottom: "2rem", fontSize: ".8rem", color: "#FFB800", letterSpacing: ".1em", fontWeight: 600 }}>
             🎉 FREE CONSULTATION · NO COMMITMENT REQUIRED
           </div>
-          <h2 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "clamp(2.8rem,6vw,5rem)", color: "#fff", letterSpacing: "-.04em", lineHeight: .98, marginBottom: "1.5rem" }}>
+          <h2 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 900, fontSize: "clamp(2.8rem,6vw,5rem)", color: "#111111", letterSpacing: "-.04em", lineHeight: .98, marginBottom: "1.5rem" }}>
             Ready to Own<br />
             <span style={{ background: "linear-gradient(120deg,#FFB800,#FF5F00)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Your Power?
             </span>
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "clamp(.95rem,1.5vw,1.15rem)", lineHeight: 1.75, marginBottom: "3rem", maxWidth: 560, margin: "0 auto 3rem" }}>
+          <p style={{ color: "rgba(15,15,15,0.55)", fontSize: "clamp(.95rem,1.5vw,1.15rem)", lineHeight: 1.75, marginBottom: "3rem", maxWidth: 560, margin: "0 auto 3rem" }}>
             Join 500+ Nigerians who escaped NEPA and generator life permanently. Get a free, custom solar quote within 24 hours — no sales pressure.
           </p>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
             <CTABtn label="Get My Free Quote Now — 100% Free" size="lg" />
-            <p style={{ fontSize: ".8rem", color: "rgba(255,255,255,0.28)" }}>No spam. No pressure. Just honest solar advice from Nigeria's most trusted team.</p>
+            <p style={{ fontSize: ".8rem", color: "rgba(15,15,15,0.28)" }}>No spam. No pressure. Just honest solar advice from Nigeria's most trusted team.</p>
           </div>
         </Reveal>
       </div>
@@ -835,7 +835,7 @@ function FinalCTA() {
 // ── FOOTER ────────────────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{ background: "#040404", borderTop: "1px solid rgba(255,255,255,0.05)", padding: "3rem clamp(1rem,5vw,3rem)" }}>
+    <footer style={{ background: "#111111", borderTop: "1px solid rgba(255,255,255,0.08)", padding: "3rem clamp(1rem,5vw,3rem)" }}>
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
           <div>
@@ -843,9 +843,9 @@ function Footer() {
               <div style={{ width: 32, height: 32, borderRadius: "50%", background: "linear-gradient(135deg,#FFB800,#FF5F00)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" style={{ width: 16, height: 16 }}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
               </div>
-              <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, color: "#fff", fontSize: "1.05rem" }}>PROSOLAR ENERGY</span>
+              <span style={{ fontFamily: "'Syne',sans-serif", fontWeight: 800, color: "#ffffff", fontSize: "1.05rem" }}>PROSOLAR ENERGY</span>
             </div>
-            <p style={{ fontSize: ".85rem", color: "rgba(255,255,255,0.35)", lineHeight: 1.7, maxWidth: 280 }}>Nigeria's most trusted solar energy company. Powering homes and businesses with clean, reliable energy since 2014.</p>
+            <p style={{ fontSize: ".85rem", color: "rgba(15,15,15,0.35)", lineHeight: 1.7, maxWidth: 280 }}>Nigeria's most trusted solar energy company. Powering homes and businesses with clean, reliable energy since 2014.</p>
           </div>
           {[
             { title: "Services", links: ["Solar Home Systems", "Commercial Solar", "Rural Electrification", "After-Sales Support"] },
@@ -853,24 +853,24 @@ function Footer() {
             { title: "Contact", links: ["Get a Quote", "WhatsApp Us", "Email Us", "Visit Us"] },
           ].map(col => (
             <div key={col.title}>
-              <h4 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#fff", fontSize: ".85rem", marginBottom: "1rem", letterSpacing: ".06em" }}>{col.title}</h4>
+              <h4 style={{ fontFamily: "'Syne',sans-serif", fontWeight: 700, color: "#ffffff", fontSize: ".85rem", marginBottom: "1rem", letterSpacing: ".06em" }}>{col.title}</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: ".6rem" }}>
                 {col.links.map(l => (
-                  <a key={l} href="#" style={{ fontSize: ".82rem", color: "rgba(255,255,255,0.35)", textDecoration: "none", transition: "color .2s" }}
+                  <a key={l} href="#" style={{ fontSize: ".82rem", color: "rgba(15,15,15,0.35)", textDecoration: "none", transition: "color .2s" }}
                     onMouseEnter={e => (e.currentTarget.style.color = "#FFB800")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}>{l}</a>
+                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(20,20,20,0.5)")}>{l}</a>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontSize: ".78rem", color: "rgba(255,255,255,0.2)" }}>© {new Date().getFullYear()} ProSolar Energy Nigeria Ltd. All rights reserved.</p>
+        <div style={{ borderTop: "1px solid rgba(0,0,0,0.07)", paddingTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+          <p style={{ fontSize: ".78rem", color: "rgba(15,15,15,0.2)" }}>© {new Date().getFullYear()} ProSolar Energy Nigeria Ltd. All rights reserved.</p>
           <div style={{ display: "flex", gap: "1.5rem" }}>
             {["Privacy Policy", "Terms of Service"].map(l => (
-              <a key={l} href="#" style={{ fontSize: ".78rem", color: "rgba(255,255,255,0.2)", textDecoration: "none" }}
+              <a key={l} href="#" style={{ fontSize: ".78rem", color: "rgba(15,15,15,0.2)", textDecoration: "none" }}
                 onMouseEnter={e => (e.currentTarget.style.color = "#FFB800")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.2)")}>{l}</a>
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(20,20,20,0.35)")}>{l}</a>
             ))}
           </div>
         </div>
